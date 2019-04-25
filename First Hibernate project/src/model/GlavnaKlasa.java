@@ -1,8 +1,12 @@
 package model;
 
+import java.util.Scanner;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+
+import biznisServis.crudMetode;
 
 public class GlavnaKlasa {
 
@@ -10,32 +14,22 @@ public class GlavnaKlasa {
 		// TODO Auto-generated method stub
 
 		
-		SessionFactory sf = new Configuration().configure().buildSessionFactory();
+	Scanner scanner = new Scanner(System.in);
 	
-		Marka marka = new Marka();
-		
-		marka.setNazivMarke("Fiat");
-		marka.setZemlja("Italija");
-		System.out.println(marka.getNazivMarke()+" "+marka.getZemlja());
-		
-		Session sesija = sf.openSession();
-			sesija.beginTransaction();
-		
-		try {
-			
-			sesija.save(marka);
-			
-			
-			sesija.getTransaction().commit();
-			System.out.println("Uspesno ubacena marka");
-		} catch (Exception e) {
-			
-			sesija.getTransaction().rollback();	
-			System.out.println("Neuspesno ubacena marka");
-		
-			}
-		sesija.close();
-
+	System.out.println("Unesite idMarke: ");
+	
+	int idMarke = Integer.parseInt(scanner.nextLine());
+	
+	System.out.println("Unesite zemlju: ");
+	
+	String zemlja = scanner.nextLine();
+	
+	crudMetode metode = new crudMetode();
+	
+	metode.azurirajZemlju(idMarke, zemlja);
+	
+	
+	
 
 
 
