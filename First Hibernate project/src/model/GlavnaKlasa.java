@@ -16,19 +16,29 @@ public class GlavnaKlasa {
 		
 	Scanner scanner = new Scanner(System.in);
 	
-	System.out.println("Unesite idMarke: ");
+	System.out.println("Unesite naziv marke: ");
+	String nazivMarke = scanner.nextLine();
 	
-	int idMarke = Integer.parseInt(scanner.nextLine());
+	System.out.println("Unesite ime zemlje: ");
+	String zemlja=scanner.nextLine();
 	
-	System.out.println("Unesite zemlju: ");
+	System.out.println("Unesite ime grada: ");
+	String grad = scanner.nextLine();
 	
-	String zemlja = scanner.nextLine();
+	System.out.println("Unesite ulicu");
+	String ulica = scanner.nextLine();
+	
+	
+	
+	//int idMarke = Integer.parseInt(scanner.nextLine());
+	
+	
 	
 	crudMetode metode = new crudMetode();
 	
-	metode.azurirajZemlju(idMarke, zemlja);
+	//metode.azurirajZemlju(idMarke, zemlja);
 	
-	
+	metode.ubaciMarku(nazivMarke, zemlja, grad, ulica);
 	
 
 
