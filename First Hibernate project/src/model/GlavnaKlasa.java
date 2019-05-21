@@ -130,12 +130,32 @@ user3.setMarke(marke);
  
  
  User user = new User();
+ user.setIme("Pera");
+ user.setPrezime("Uprezime");
  Administrator administrator = new Administrator();
+ administrator.setIme("Marko");
+ administrator.setBanujOperatera("Necu da banujem");
  Operator operator = new Operator();
+ operator.setIme("Olivera");
+ operator.setPozicija("Telefonski operator");
+ 
  
 
+ 
+ 
+ 
+ 
+ 
+ 
 Session sesija = sf.openSession();
 sesija.beginTransaction();
+
+sesija.save(user);
+sesija.save(administrator);
+sesija.save(operator);
+ 
+
+
 
 try {
 /*	sesija.save(user);
