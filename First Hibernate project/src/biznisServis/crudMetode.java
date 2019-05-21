@@ -110,7 +110,7 @@ public void ubaciUsera(String ime, String prezime,List<Adresa>listaAdresa) {
 	User user = new User();
 	user.setIme(ime);
 	user.setPrezime(prezime);
-	user.setListaAdresa(listaAdresa);
+	//user.setListaAdresa(listaAdresa);
 	
 	
 	

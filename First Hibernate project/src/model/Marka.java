@@ -1,11 +1,16 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,10 +26,16 @@ public class Marka {
 	private String nazivMarke;
 	@Embedded
 	private Adresa adresa;
-
+    @ManyToMany	
+    private List<User>listaUsera=new ArrayList<User>();
 	
 	
-	
+	public List<User> getListaUsera() {
+		return listaUsera;
+	}
+	public void setListaUsera(List<User> listaUsera) {
+		this.listaUsera = listaUsera;
+	}
 	public Adresa getAdresa() {
 		return adresa;
 	}
